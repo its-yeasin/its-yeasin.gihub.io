@@ -552,7 +552,7 @@
     async function validateKey(key) {
       try {
         const r = await fetch(`${API_URL}/v1/models`, {
-          headers: { 'X-API-Key': key, 'ngrok-skip-browser-warning': '1' }
+          headers: { 'X-API-Key': key}
         });
         return r.ok;
       } catch { return false; }
@@ -658,8 +658,7 @@
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
-            'X-API-Key': apiKey,
-            'ngrok-skip-browser-warning': '1',
+            'X-API-Key': apiKey
           },
           body: JSON.stringify({
             messages: history,
